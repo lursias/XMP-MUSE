@@ -128,7 +128,7 @@ end
         plot(Y(:,3),Y(:,1))
         
         hold on
-        plot(Y(:,9),Y(:,11))
+        comet(Y(:,9),Y(:,11))
         
         legend('$Luna$','$Tierra$','$Satelite$')
         set(legend,...
