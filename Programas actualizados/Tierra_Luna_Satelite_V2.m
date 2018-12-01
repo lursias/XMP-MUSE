@@ -13,7 +13,7 @@ r_l = 1;
 % Condiciones iniciales satelite
 
 prompt = {'Elija orbita del satelite (1 = caotica, 2 = circular)'};  
-title = 'Selección de órbita';
+title = 'SelecciÃ³n de Ã³rbita';
 num_lines = 1;
 default = {'1'};   
 Init_orb = inputdlg(prompt,title,num_lines,default);
@@ -22,7 +22,7 @@ Init_orb = str2double(Init_orb);
 
 clearvars default  prompt title num_lines
 
-[xs, vxs, ys, vys]  = condicion_init(Init_orb);
+[xs, vxs, ys, vys]  = condicion_init(Init_orb,M_T);
 
 tspan = [0, 2*pi/9*p];
 Y_0 = [0 -sqrt(G*M_T/r_l)/M_T*M_L,0 0,1 0 ,0 sqrt(G*M_T/r_l),xs vxs,ys vys]; % Vector de condiciones iniciales
@@ -52,23 +52,5 @@ set(legend,...
     'Position',[0.630 0.785 0.204 0.081],...
     'Interpreter','latex');
 
-function [xs, vxs, ys, vys]  = condicion_init(n)
-
-    switch n
-
-        case 1
-            xs = 0.8;
-            vxs = 0.5;
-            ys = 0.5;
-            vys = -4;
-
-        case 2
-
-            xs = 0.2;
-            vxs = 0;
-            ys = 0;
-            vys = sqrt(M_T/xs);
-    end
-end
 
 
