@@ -1,17 +1,17 @@
 addpath ('Funciones y objetos')
 %--------------------Estabilidad Puntos de Lagrange-----------------------%
 
-%Instanciar el objeto satélite
+%Instanciar el objeto satÃ©lite
 
 Sat = Satelite;
 
-%Elección de tiempo y punto de Lagrange a estudiar
+%ElecciÃ³n de tiempo y punto de Lagrange a estudiar
 
 prompt = {'Elija tiempo (medido en periodos lunares)'...
     ,'Elija Punto de Lagrange (1-5)'};  
 dlg_title = 'Puntos Langrange';
 num_lines = 1;
-defaultans = {'10','4'};   %Elegir ancho de banda de estudio
+defaultans = {'10','4'};   
 datos = inputdlg(prompt,dlg_title,num_lines,defaultans);
 datos = str2double(datos);
 p = datos(1);
